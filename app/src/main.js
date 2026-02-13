@@ -11,17 +11,20 @@ const getAndRenderPokemon = async () => {
     if (pokemon.error) {
       renderSuccess('');
       renderError(pokemon.error);
+      return;
     }
     // render the pokemon data
     renderError('');
-    renderPokemon(pokemon);
-    renderSuccess(`${pokemon.name} was discovered!`);
+    renderPokemon(pokemon.data); //this fixed the problem
+    renderSuccess(`${pokemon.data.name} was discovered!`);
 
-  } catch {
+  } catch (error){
     renderSuccess('');
     renderError(`Something went wrong: ${error}`);
   }
-
-  const button = document.querySelector('button');
-  button.addEventListener('click', getAndRenderPokemon);
 }
+
+getAndRenderPokemon();
+
+const button = document.querySelector('button');
+button.addEventListener('click', getAndRenderPokemon);

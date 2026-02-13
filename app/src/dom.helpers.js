@@ -28,5 +28,3 @@ export const renderSuccess = (msg) => {
   const successElement = document.getElementById('success');
   successElement.textContent = msg;
 }
-
-export { renderPokemon, renderError, renderSuccess }

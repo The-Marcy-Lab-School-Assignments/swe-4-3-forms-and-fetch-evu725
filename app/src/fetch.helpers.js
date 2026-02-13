@@ -32,7 +32,7 @@ export const getRandomPokemon = async () => {
         return { data: null, error: error };
     }
 }
-
+// console.log(await getRandomPokemon());
 export const postDiscoveredPokemon = async (formData) => {
     try {
         // const name = contactForm.elements.message.value;
@@ -59,5 +59,3 @@ export const postDiscoveredPokemon = async (formData) => {
         return { data: null, error: error }
     }
 }
-
-export { getRandomPokemon, postDiscoveredPokemon }
